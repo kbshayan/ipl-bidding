@@ -19,14 +19,21 @@ async function getHandler() {
     await seedInitialData()
 
     const app = createApp()
-    cachedHandler = serverless(app, {
-        basePath: '/.netlify/functions/api',
-    })
+        // Don't use basePath - Netlify redirect handles the path routing
+    cachedHandler = serverless(app)
 
     return cachedHandler
 }
 
 export const handler = async(event, context) => {
-    const appHandler = await getHandler()
-    return appHandler(event, context)
+    try {
+        const appHandler = await getHandler()
+        return appHandler(event, context)
+    } catch (error) {
+        console.error('Function error:', error)
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: 'Internal server error', error: error.message }),
+        }
+    }
 }
