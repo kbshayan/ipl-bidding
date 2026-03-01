@@ -78,11 +78,11 @@ function LoginPage({ onLoginSuccess }) {
   const validateLoginForm = () => {
     const errors = {}
 
-    if (!loginForm.email) {
+    if (!loginForm.email || loginForm.email.trim() === '') {
       errors.email = 'Email or username is required'
     }
 
-    if (!loginForm.password) {
+    if (!loginForm.password || loginForm.password.trim() === '') {
       errors.password = 'Password is required'
     }
 
