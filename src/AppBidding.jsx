@@ -466,7 +466,10 @@ function AppBidding() {
                   <button
                     className="btn bid"
                     disabled={match.status !== 'Upcoming'}
-                    onClick={() => setBidForm({ matchId: match.id, selection: 'TEAM_A', amount: '100' })}
+                    onClick={() => {
+                      setBidForm({ matchId: match.id, selection: 'TEAM_A', amount: '100' })
+                      setTradePanelOpen(true)
+                    }}
                   >
                     {match.status === 'Upcoming' ? 'Bid on this match' : 'Bidding closed'}
                   </button>

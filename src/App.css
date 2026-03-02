@@ -771,26 +771,26 @@ body {
 
 /* Trade Panel Overlay Mode */
 
-.trade-panel-overlay {
+.trade-panel.trade-panel-overlay {
     position: fixed;
-    top: 50%!important;
-    left: 50%!important;
+    top: 50% !important;
+    left: 50% !important;
     transform: translate(-50%, -50%) !important;
     max-width: 500px;
     width: calc(100vw - 40px);
     max-height: calc(100vh - 40px);
     overflow-y: auto;
-    z-index: calc(var(--layer-overlay) + 1);
+    z-index: calc(var(--layer-modal) + 1) !important;
     animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
 }
 
-.trade-panel-overlay:hover {
+.trade-panel.trade-panel-overlay:hover {
     transform: translate(-50%, -50%) !important;
 }
 
-.trade-panel-overlay form {
+.trade-panel.trade-panel-overlay form {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
