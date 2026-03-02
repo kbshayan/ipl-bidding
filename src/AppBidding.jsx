@@ -686,7 +686,7 @@ function AppBidding() {
           <article className="wallet-card">
             <h2>Admin Topup Requests</h2>
             <div className="requests-list">
-              {adminRequests.map((request) => (
+              {adminRequests.filter(request => request.userRole !== 'superadmin').map((request) => (
                 <div key={request.id} className="admin-request-card">
                   {request.screenshotUrl && (
                     <div style={{ marginBottom: '12px', borderBottom: '1px solid #e0e0e0', paddingBottom: '12px' }}>
@@ -718,7 +718,7 @@ function AppBidding() {
 
             <h2 style={{ marginTop: 18 }}>Wallet Ledger</h2>
             <div className="requests-list">
-              {users.map((item) => (
+              {users.filter(item => item.role !== 'superadmin').map((item) => (
                 <div key={item.id} className="request-row">
                   <strong>{item.name}</strong>
                   <strong>{formatCurrency(item.wallet)}</strong>
@@ -731,7 +731,7 @@ function AppBidding() {
               {transactions.length === 0 ? (
                 <p className="muted">No transactions yet.</p>
               ) : (
-                transactions.map((tx) => (
+                transactions.filter(tx => tx.userRole !== 'superadmin').map((tx) => (
                   <div key={tx.id} className="request-row" style={{ paddingBottom: '8px', borderBottom: '1px solid #e0e0e0', marginBottom: '8px' }}>
                     <div>
                       <strong>{tx.userName}</strong>

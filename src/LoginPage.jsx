@@ -145,6 +145,9 @@ function LoginPage({ onLoginSuccess }) {
         throw new Error(data.message || 'Login failed')
       }
 
+      // Add fake delay (1.5 seconds) to show buffering animation
+      await new Promise(resolve => setTimeout(resolve, 1500))
+
       setSuccess(true)
       localStorage.setItem('sm_token', data.token)
       localStorage.setItem('sm_user', JSON.stringify(data.user))
@@ -157,7 +160,7 @@ function LoginPage({ onLoginSuccess }) {
 
       setTimeout(() => {
         onLoginSuccess(data.token, data.user)
-      }, 1500)
+      }, 800)
     } catch (err) {
       triggerError(err.message)
     } finally {

@@ -2399,3 +2399,271 @@ body {
         transform: scale(1);
     }
 }
+
+
+/* ===== ULTRA-MOBILE OPTIMIZATIONS (Max 380px) ===== */
+
+@media (max-width: 380px) {
+    .app-shell {
+        padding: 8px;
+    }
+    .top-bar {
+        padding: 8px 10px;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .header-content {
+        gap: 10px;
+    }
+    .header-text h1 {
+        font-size: 16px;
+    }
+    .ipl-poster {
+        height: 50px;
+    }
+    .wallet-display {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    .top-bar button {
+        min-height: 40px;
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+    .tab-nav {
+        gap: 4px;
+        margin-bottom: 16px;
+    }
+    .tab-btn,
+    .tab {
+        padding: 8px 10px;
+        font-size: 10px;
+        min-height: 36px;
+    }
+    .market-section {
+        gap: 16px;
+    }
+    .matches-grid {
+        gap: 16px;
+    }
+    .match-card {
+        border-radius: 10px;
+    }
+    .match-content {
+        padding: 14px;
+    }
+    .match-header {
+        padding: 10px 12px;
+    }
+    .bid-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+    .trade-panel {
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        top: 10px;
+    }
+    .trade-panel h2 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    .trade-panel label {
+        font-size: 9px;
+        margin-bottom: 2px;
+    }
+    .trade-panel select,
+    .trade-panel input {
+        padding: 8px;
+        font-size: 13px;
+        min-height: 36px;
+    }
+    .trade-panel button[type="submit"] {
+        padding: 10px 12px;
+        font-size: 11px;
+        min-height: 36px;
+    }
+    .card {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .leaderboard h2 {
+        padding: 14px;
+        font-size: 15px;
+    }
+    .leaderboard-item {
+        padding: 10px 10px;
+        grid-template-columns: 24px 1fr auto;
+        font-size: 11px;
+    }
+    .wallet-amount {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+    .add-money-panel {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .qr-box {
+        width: 100px;
+        height: 100px;
+    }
+    .auth-card {
+        padding: 16px;
+        margin: 12px;
+    }
+    .header-actions {
+        width: 100%;
+        gap: 6px;
+    }
+    .bidding-clock-card {
+        min-width: 120px;
+        padding: 6px 8px;
+    }
+    .clock-value {
+        font-size: 24px;
+    }
+    .clock-label {
+        font-size: 9px;
+    }
+}
+
+
+/* ===== LANDSCAPE MODE OPTIMIZATIONS ===== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .login-header,
+    .header {
+        margin-bottom: 12px;
+    }
+    .login-title,
+    .header-text h1,
+    .top-bar h1 {
+        font-size: 18px;
+    }
+    .login-subtitle {
+        display: none;
+    }
+    .match-card {
+        margin-bottom: 0;
+    }
+    .tab-nav {
+        margin-bottom: 16px;
+    }
+    .trade-panel {
+        top: 10px;
+    }
+    .matches-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .bids-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .admin-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+
+/* ===== TABLET OPTIMIZATION (768px - 1024px) ===== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .market-section {
+        grid-template-columns: 1fr 340px;
+    }
+    .matches-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .admin-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    .trade-panel {
+        top: 20px;
+    }
+}
+
+
+/* ===== LARGE SCREEN OPTIMIZATION ===== */
+
+@media (min-width: 1400px) {
+    .app-shell {
+        max-width: 1600px;
+    }
+    .market-section {
+        grid-template-columns: 1fr 400px;
+    }
+    .matches-grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    }
+}
+
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Increase tap target sizes on touch devices */
+    .tab-btn,
+    .tab,
+    .bid-btn,
+    .confirm,
+    .top-bar button,
+    .auth-form button {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+    /* Remove hover effects on touch devices */
+    .match-card,
+    .bid-item,
+    .card {
+        transition: transform 0.2s ease;
+    }
+    .match-card:hover,
+    .bid-item:hover,
+    .card:hover {
+        transform: translateY(-2px);
+    }
+    /* Better spacing on touch */
+    .input-group {
+        margin-bottom: 16px;
+    }
+    /* Larger tap areas for form inputs */
+    input,
+    select,
+    textarea {
+        min-height: 48px;
+        font-size: 16px;
+    }
+    /* Disable text selection on buttons */
+    button,
+    .tab,
+    .chip {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    /* Better spacing between clickable elements */
+    .request-row,
+    .leaderboard-item {
+        padding: 14px 16px;
+    }
+}
+
+
+/* ===== RETINA DISPLAY OPTIMIZATION ===== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    /* Thinner borders for retina displays */
+    .card,
+    .auth-card,
+    .match-card,
+    input,
+    select {
+        border-width: 1px;
+    }
+    /* Adjust shadows for better definition */
+    .card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+}

@@ -74,10 +74,11 @@ export async function getMyTopupRequests(req, res) {
 }
 
 export async function getAdminTopupRequests(_req, res) {
-    const requests = await TopupRequest.find().sort({ createdAt: -1 })
+    const requests = await TopupRequest.find().populate('userId', 'role').sort({ createdAt: -1 })
     const data = requests.map((request) => ({
         id: request.requestId,
-        userId: request.userId,
+        userId: request.userId._id,
+        userRole: request.userId.role,
         userName: request.userName,
         amount: request.amount,
         upiRef: request.upiRef,
