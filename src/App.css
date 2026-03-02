@@ -3098,6 +3098,49 @@ body {
 }
 
 
+/* ===== PHONE FIXES (ADMIN/WALLET USABILITY) ===== */
+
+@media (max-width: 768px) {
+    .wallet-grid,
+    .admin-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: var(--space-md) !important;
+    }
+    .wallet-card {
+        padding: var(--space-md) !important;
+    }
+    .requests-list {
+        display: grid;
+        gap: 10px;
+    }
+    .request-row,
+    .admin-request-card {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+        width: 100%;
+    }
+    .admin-actions {
+        width: 100%;
+        min-width: 0 !important;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+    .action-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .action-row .btn {
+        width: 100%;
+        min-height: 44px;
+    }
+}
+
+
 /* ===== RETINA DISPLAY OPTIMIZATION ===== */
 
 @media (-webkit-min-device-pixel-ratio: 2),
